@@ -1,0 +1,459 @@
+2025-12-23 11:16:11,455 - INFO - Reading integrated dataset...
+2025-12-23 11:16:11,455 - INFO - Connecting to DW: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-23 11:16:11,455 - INFO - Creating tables...
+2025-12-23 11:16:11,455 - INFO - Loading dimensions...
+2025-12-23 11:16:11,498 - INFO - Loading fact table...
+2025-12-23 11:16:11,503 - INFO - DW loaded successfully.
+2025-12-23 11:20:09,509 - INFO - === START STEP: Data Quality Checks (RAW) ===
+2025-12-23 11:20:10,167 - WARNING - Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\src\validation\run_quality_checks.py", line 2, in <module>
+    from src.ingestion.load_raw_data import load_salaries_data, load_housing_data
+  File "C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\src\ingestion\load_raw_data.py", line 4, in <module>
+    from src.monitoring.logger import setup_logger
+ModuleNotFoundError: No module named 'src.monitoring'
+2025-12-23 11:20:10,170 - ERROR - STEP FAILED: Data Quality Checks (RAW)
+2025-12-23 11:20:41,318 - INFO - === START STEP: Data Quality Checks (RAW) ===
+2025-12-23 11:20:42,015 - WARNING - 2025-12-23 11:20:41,955 - INFO - Loading salaries dataset
+2025-12-23 11:20:41,956 - INFO - Salaries dataset loaded with 70 rows
+2025-12-23 11:20:41,956 - INFO - Loading housing dataset
+2025-12-23 11:20:41,959 - INFO - Housing dataset loaded with 70 rows
+2025-12-23 11:20:41,959 - INFO - Checking schema for Salaries
+2025-12-23 11:20:41,959 - INFO - Checking null values for Salaries
+2025-12-23 11:20:41,959 - WARNING - Salaries: Null values detected:
+avg_salary_eur    4
+dtype: int64
+2025-12-23 11:20:41,959 - INFO - Checking duplicates for Salaries
+2025-12-23 11:20:41,961 - WARNING - Salaries: 3 duplicated rows found
+2025-12-23 11:20:41,961 - INFO - Checking schema for Housing
+2025-12-23 11:20:41,961 - INFO - Checking null values for Housing
+2025-12-23 11:20:41,961 - WARNING - Housing: Null values detected:
+avg_price_m2_eur    4
+dtype: int64
+2025-12-23 11:20:41,961 - INFO - Checking duplicates for Housing
+2025-12-23 11:20:41,961 - WARNING - Housing: 2 duplicated rows found
+2025-12-23 11:20:42,015 - INFO - === END STEP: Data Quality Checks (RAW) ===
+2025-12-23 11:20:42,016 - INFO - === START STEP: Clean to Staging ===
+2025-12-23 11:20:42,844 - WARNING - 2025-12-23 11:20:42,744 - INFO - Reading RAW datasets...
+2025-12-23 11:20:42,761 - INFO - Cleaning Salaries -> Staging
+2025-12-23 11:20:42,761 - INFO - Salaries: dropped 3 duplicate rows
+2025-12-23 11:20:42,772 - INFO - Cleaning Housing -> Staging
+2025-12-23 11:20:42,772 - INFO - Housing: dropped 2 duplicate rows
+2025-12-23 11:20:42,776 - INFO - Saved salaries staging file: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\staging\salaries\salaries_clean.csv
+2025-12-23 11:20:42,776 - INFO - Saved housing staging file: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\staging\housing\housing_clean.csv
+2025-12-23 11:20:42,844 - INFO - === END STEP: Clean to Staging ===
+2025-12-23 11:20:42,844 - INFO - === START STEP: Integrate Datasets ===
+2025-12-23 11:20:43,505 - WARNING - 2025-12-23 11:20:43,444 - INFO - Reading STAGING datasets...
+2025-12-23 11:20:43,448 - INFO - Integrating datasets (JOIN)...
+2025-12-23 11:20:43,448 - INFO - Integrated rows: 67
+2025-12-23 11:20:43,448 - INFO - Creating derived metrics...
+2025-12-23 11:20:43,448 - INFO - Saved integrated dataset: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\staging\integrated\affordability_integrated.csv
+2025-12-23 11:20:43,505 - INFO - === END STEP: Integrate Datasets ===
+2025-12-23 11:20:43,505 - INFO - === START STEP: Load to Data Warehouse (SQLite) ===
+2025-12-23 11:20:44,030 - INFO - Reading integrated dataset...
+2025-12-23 11:20:44,103 - INFO - Connecting to DW: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-23 11:20:44,103 - INFO - Creating tables...
+2025-12-23 11:20:44,105 - INFO - Loading dimensions...
+2025-12-23 11:20:44,141 - INFO - Loading fact table...
+2025-12-23 11:20:44,157 - INFO - DW loaded successfully.
+2025-12-23 11:20:44,213 - WARNING - 2025-12-23 11:20:44,030 - INFO - Reading integrated dataset...
+2025-12-23 11:20:44,103 - INFO - Connecting to DW: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-23 11:20:44,103 - INFO - Creating tables...
+2025-12-23 11:20:44,105 - INFO - Loading dimensions...
+2025-12-23 11:20:44,141 - INFO - Loading fact table...
+2025-12-23 11:20:44,157 - INFO - DW loaded successfully.
+2025-12-23 11:20:44,213 - INFO - === END STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 09:49:24,410 - INFO - === START STEP: Data Quality Checks (RAW) ===
+2025-12-26 09:49:30,352 - WARNING - 2025-12-26 09:49:30,259 - INFO - Loading salaries dataset
+2025-12-26 09:49:30,274 - INFO - Salaries dataset loaded with 70 rows
+2025-12-26 09:49:30,274 - INFO - Loading housing dataset
+2025-12-26 09:49:30,291 - INFO - Housing dataset loaded with 70 rows
+2025-12-26 09:49:30,291 - INFO - Checking schema for Salaries
+2025-12-26 09:49:30,291 - INFO - Checking null values for Salaries
+2025-12-26 09:49:30,295 - WARNING - Salaries: Null values detected:
+avg_salary_eur    4
+dtype: int64
+2025-12-26 09:49:30,296 - INFO - Checking duplicates for Salaries
+2025-12-26 09:49:30,300 - WARNING - Salaries: 3 duplicated rows found
+2025-12-26 09:49:30,300 - INFO - Checking schema for Housing
+2025-12-26 09:49:30,300 - INFO - Checking null values for Housing
+2025-12-26 09:49:30,300 - WARNING - Housing: Null values detected:
+avg_price_m2_eur    4
+dtype: int64
+2025-12-26 09:49:30,300 - INFO - Checking duplicates for Housing
+2025-12-26 09:49:30,300 - WARNING - Housing: 2 duplicated rows found
+2025-12-26 09:49:30,352 - INFO - === END STEP: Data Quality Checks (RAW) ===
+2025-12-26 09:49:30,352 - INFO - === START STEP: Clean to Staging ===
+2025-12-26 09:49:31,002 - WARNING - 2025-12-26 09:49:30,871 - INFO - Reading RAW datasets...
+2025-12-26 09:49:30,876 - INFO - Cleaning Salaries -> Staging
+2025-12-26 09:49:30,876 - INFO - Salaries: dropped 3 duplicate rows
+2025-12-26 09:49:30,887 - INFO - Cleaning Housing -> Staging
+2025-12-26 09:49:30,887 - INFO - Housing: dropped 2 duplicate rows
+2025-12-26 09:49:30,908 - INFO - Saved salaries staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\salaries\salaries_clean.csv
+2025-12-26 09:49:30,908 - INFO - Saved housing staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\housing\housing_clean.csv
+2025-12-26 09:49:31,002 - INFO - === END STEP: Clean to Staging ===
+2025-12-26 09:49:31,002 - INFO - === START STEP: Integrate Datasets ===
+2025-12-26 09:49:31,658 - WARNING - 2025-12-26 09:49:31,524 - INFO - Reading STAGING datasets...
+2025-12-26 09:49:31,580 - INFO - Integrating datasets (JOIN)...
+2025-12-26 09:49:31,590 - INFO - Integrated rows: 67
+2025-12-26 09:49:31,590 - INFO - Creating derived metrics...
+2025-12-26 09:49:31,598 - INFO - Saved integrated dataset: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\integrated\affordability_integrated.csv
+2025-12-26 09:49:31,659 - INFO - === END STEP: Integrate Datasets ===
+2025-12-26 09:49:31,659 - INFO - === START STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 09:49:32,224 - INFO - Reading integrated dataset...
+2025-12-26 09:49:32,255 - INFO - Connecting to DW: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-26 09:49:32,264 - INFO - Creating tables...
+2025-12-26 09:49:32,271 - INFO - Loading dimensions...
+2025-12-26 09:49:32,320 - INFO - Loading fact table...
+2025-12-26 09:49:32,323 - INFO - DW loaded successfully.
+2025-12-26 09:49:32,392 - WARNING - 2025-12-26 09:49:32,224 - INFO - Reading integrated dataset...
+2025-12-26 09:49:32,255 - INFO - Connecting to DW: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-26 09:49:32,264 - INFO - Creating tables...
+2025-12-26 09:49:32,271 - INFO - Loading dimensions...
+2025-12-26 09:49:32,320 - INFO - Loading fact table...
+2025-12-26 09:49:32,323 - INFO - DW loaded successfully.
+2025-12-26 09:49:32,392 - INFO - === END STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 09:49:32,393 - INFO - PIPELINE FINISHED SUCCESSFULLY
+2025-12-26 09:49:46,959 - INFO - === START STEP: Data Quality Checks (RAW) ===
+2025-12-26 09:49:47,500 - WARNING - 2025-12-26 09:49:47,440 - INFO - Loading salaries dataset
+2025-12-26 09:49:47,447 - INFO - Salaries dataset loaded with 70 rows
+2025-12-26 09:49:47,447 - INFO - Loading housing dataset
+2025-12-26 09:49:47,447 - INFO - Housing dataset loaded with 70 rows
+2025-12-26 09:49:47,447 - INFO - Checking schema for Salaries
+2025-12-26 09:49:47,449 - INFO - Checking null values for Salaries
+2025-12-26 09:49:47,449 - WARNING - Salaries: Null values detected:
+avg_salary_eur    4
+dtype: int64
+2025-12-26 09:49:47,449 - INFO - Checking duplicates for Salaries
+2025-12-26 09:49:47,449 - WARNING - Salaries: 3 duplicated rows found
+2025-12-26 09:49:47,449 - INFO - Checking schema for Housing
+2025-12-26 09:49:47,449 - INFO - Checking null values for Housing
+2025-12-26 09:49:47,451 - WARNING - Housing: Null values detected:
+avg_price_m2_eur    4
+dtype: int64
+2025-12-26 09:49:47,451 - INFO - Checking duplicates for Housing
+2025-12-26 09:49:47,451 - WARNING - Housing: 2 duplicated rows found
+2025-12-26 09:49:47,501 - INFO - === END STEP: Data Quality Checks (RAW) ===
+2025-12-26 09:49:47,501 - INFO - === START STEP: Clean to Staging ===
+2025-12-26 09:49:48,133 - WARNING - 2025-12-26 09:49:48,053 - INFO - Reading RAW datasets...
+2025-12-26 09:49:48,060 - INFO - Cleaning Salaries -> Staging
+2025-12-26 09:49:48,065 - INFO - Salaries: dropped 3 duplicate rows
+2025-12-26 09:49:48,066 - INFO - Cleaning Housing -> Staging
+2025-12-26 09:49:48,066 - INFO - Housing: dropped 2 duplicate rows
+2025-12-26 09:49:48,085 - INFO - Saved salaries staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\salaries\salaries_clean.csv
+2025-12-26 09:49:48,085 - INFO - Saved housing staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\housing\housing_clean.csv
+2025-12-26 09:49:48,133 - INFO - === END STEP: Clean to Staging ===
+2025-12-26 09:49:48,133 - INFO - === START STEP: Integrate Datasets ===
+2025-12-26 09:49:48,725 - WARNING - 2025-12-26 09:49:48,652 - INFO - Reading STAGING datasets...
+2025-12-26 09:49:48,655 - INFO - Integrating datasets (JOIN)...
+2025-12-26 09:49:48,655 - INFO - Integrated rows: 67
+2025-12-26 09:49:48,655 - INFO - Creating derived metrics...
+2025-12-26 09:49:48,655 - INFO - Saved integrated dataset: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\integrated\affordability_integrated.csv
+2025-12-26 09:49:48,725 - INFO - === END STEP: Integrate Datasets ===
+2025-12-26 09:49:48,725 - INFO - === START STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 09:49:49,286 - INFO - Reading integrated dataset...
+2025-12-26 09:49:49,320 - INFO - Connecting to DW: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-26 09:49:49,320 - INFO - Creating tables...
+2025-12-26 09:49:49,320 - INFO - Loading dimensions...
+2025-12-26 09:49:49,367 - INFO - Loading fact table...
+2025-12-26 09:49:49,377 - INFO - DW loaded successfully.
+2025-12-26 09:49:49,441 - WARNING - 2025-12-26 09:49:49,286 - INFO - Reading integrated dataset...
+2025-12-26 09:49:49,320 - INFO - Connecting to DW: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-26 09:49:49,320 - INFO - Creating tables...
+2025-12-26 09:49:49,320 - INFO - Loading dimensions...
+2025-12-26 09:49:49,367 - INFO - Loading fact table...
+2025-12-26 09:49:49,377 - INFO - DW loaded successfully.
+2025-12-26 09:49:49,441 - INFO - === END STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 09:49:49,441 - INFO - PIPELINE FINISHED SUCCESSFULLY
+2025-12-26 13:18:03,111 - INFO - === START STEP: Data Quality Checks (RAW) ===
+2025-12-26 13:18:09,220 - WARNING - 2025-12-26 13:18:09,159 - INFO - Loading salaries dataset
+2025-12-26 13:18:09,164 - INFO - Salaries dataset loaded with 70 rows
+2025-12-26 13:18:09,164 - INFO - Loading housing dataset
+2025-12-26 13:18:09,166 - INFO - Housing dataset loaded with 70 rows
+2025-12-26 13:18:09,166 - INFO - Checking schema for Salaries
+2025-12-26 13:18:09,166 - INFO - Checking null values for Salaries
+2025-12-26 13:18:09,167 - WARNING - Salaries: Null values detected:
+avg_salary_eur    4
+dtype: int64
+2025-12-26 13:18:09,167 - INFO - Checking duplicates for Salaries
+2025-12-26 13:18:09,168 - WARNING - Salaries: 3 duplicated rows found
+2025-12-26 13:18:09,168 - INFO - Checking schema for Housing
+2025-12-26 13:18:09,168 - INFO - Checking null values for Housing
+2025-12-26 13:18:09,169 - WARNING - Housing: Null values detected:
+avg_price_m2_eur    4
+dtype: int64
+2025-12-26 13:18:09,169 - INFO - Checking duplicates for Housing
+2025-12-26 13:18:09,169 - WARNING - Housing: 2 duplicated rows found
+2025-12-26 13:18:09,220 - INFO - === END STEP: Data Quality Checks (RAW) ===
+2025-12-26 13:18:09,220 - INFO - === START STEP: Clean to Staging ===
+2025-12-26 13:18:09,908 - WARNING - 2025-12-26 13:18:09,802 - INFO - Reading RAW datasets...
+2025-12-26 13:18:09,802 - INFO - Cleaning Salaries -> Staging
+2025-12-26 13:18:09,818 - INFO - Salaries: dropped 3 duplicate rows
+2025-12-26 13:18:09,818 - INFO - Cleaning Housing -> Staging
+2025-12-26 13:18:09,818 - INFO - Housing: dropped 2 duplicate rows
+2025-12-26 13:18:09,836 - INFO - Saved salaries staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\salaries\salaries_clean.csv
+2025-12-26 13:18:09,836 - INFO - Saved housing staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\housing\housing_clean.csv
+2025-12-26 13:18:09,908 - INFO - === END STEP: Clean to Staging ===
+2025-12-26 13:18:09,908 - INFO - === START STEP: Integrate Datasets ===
+2025-12-26 13:18:10,526 - WARNING - 2025-12-26 13:18:10,463 - INFO - Reading STAGING datasets...
+2025-12-26 13:18:10,463 - INFO - Integrating datasets (JOIN)...
+2025-12-26 13:18:10,470 - INFO - Integrated rows: 67
+2025-12-26 13:18:10,470 - INFO - Creating derived metrics...
+2025-12-26 13:18:10,474 - INFO - Saved integrated dataset: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\integrated\affordability_integrated.csv
+2025-12-26 13:18:10,526 - INFO - === END STEP: Integrate Datasets ===
+2025-12-26 13:18:10,526 - INFO - === START STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 13:18:11,056 - INFO - Reading integrated dataset...
+2025-12-26 13:18:11,087 - INFO - Connecting to DW: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-26 13:18:11,087 - INFO - Creating tables...
+2025-12-26 13:18:11,087 - INFO - Loading dimensions...
+2025-12-26 13:18:11,151 - INFO - Loading fact table...
+2025-12-26 13:18:11,167 - INFO - DW loaded successfully.
+2025-12-26 13:18:11,242 - WARNING - 2025-12-26 13:18:11,056 - INFO - Reading integrated dataset...
+2025-12-26 13:18:11,087 - INFO - Connecting to DW: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-26 13:18:11,087 - INFO - Creating tables...
+2025-12-26 13:18:11,087 - INFO - Loading dimensions...
+2025-12-26 13:18:11,151 - INFO - Loading fact table...
+2025-12-26 13:18:11,167 - INFO - DW loaded successfully.
+2025-12-26 13:18:11,242 - INFO - === END STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 13:18:11,242 - INFO - PIPELINE FINISHED SUCCESSFULLY
+2025-12-26 14:40:50,659 - INFO - === START STEP: Data Quality Checks (RAW) ===
+2025-12-26 14:40:56,455 - WARNING - 2025-12-26 14:40:56,339 - INFO - Loading salaries dataset
+2025-12-26 14:40:56,366 - INFO - Salaries dataset loaded with 70 rows
+2025-12-26 14:40:56,366 - INFO - Loading housing dataset
+2025-12-26 14:40:56,397 - INFO - Housing dataset loaded with 70 rows
+2025-12-26 14:40:56,397 - INFO - Checking schema for Salaries
+2025-12-26 14:40:56,397 - INFO - Checking null values for Salaries
+2025-12-26 14:40:56,397 - WARNING - Salaries: Null values detected:
+avg_salary_eur    4
+dtype: int64
+2025-12-26 14:40:56,397 - INFO - Checking duplicates for Salaries
+2025-12-26 14:40:56,397 - WARNING - Salaries: 3 duplicated rows found
+2025-12-26 14:40:56,397 - INFO - Checking schema for Housing
+2025-12-26 14:40:56,397 - INFO - Checking null values for Housing
+2025-12-26 14:40:56,397 - WARNING - Housing: Null values detected:
+avg_price_m2_eur    4
+dtype: int64
+2025-12-26 14:40:56,397 - INFO - Checking duplicates for Housing
+2025-12-26 14:40:56,397 - WARNING - Housing: 2 duplicated rows found
+2025-12-26 14:40:56,455 - INFO - === END STEP: Data Quality Checks (RAW) ===
+2025-12-26 14:40:56,455 - INFO - === START STEP: Clean to Staging ===
+2025-12-26 14:40:57,089 - WARNING - 2025-12-26 14:40:57,011 - INFO - Reading RAW datasets...
+2025-12-26 14:40:57,011 - INFO - Cleaning Salaries -> Staging
+2025-12-26 14:40:57,011 - INFO - Salaries: dropped 3 duplicate rows
+2025-12-26 14:40:57,011 - INFO - Cleaning Housing -> Staging
+2025-12-26 14:40:57,024 - INFO - Housing: dropped 2 duplicate rows
+2025-12-26 14:40:57,027 - INFO - Saved salaries staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\salaries\salaries_clean.csv
+2025-12-26 14:40:57,036 - INFO - Saved housing staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\housing\housing_clean.csv
+2025-12-26 14:40:57,089 - INFO - === END STEP: Clean to Staging ===
+2025-12-26 14:40:57,089 - INFO - === START STEP: Integrate Datasets ===
+2025-12-26 14:40:57,738 - WARNING - 2025-12-26 14:40:57,623 - INFO - Reading STAGING datasets...
+2025-12-26 14:40:57,667 - INFO - Integrating datasets (JOIN)...
+2025-12-26 14:40:57,673 - INFO - Integrated rows: 67
+2025-12-26 14:40:57,674 - INFO - Creating derived metrics...
+2025-12-26 14:40:57,681 - INFO - Saved integrated dataset: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\integrated\affordability_integrated.csv
+2025-12-26 14:40:57,738 - INFO - === END STEP: Integrate Datasets ===
+2025-12-26 14:40:57,738 - INFO - === START STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 14:40:58,294 - INFO - Reading integrated dataset...
+2025-12-26 14:40:58,318 - INFO - Connecting to DW: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-26 14:40:58,322 - INFO - Creating tables...
+2025-12-26 14:40:58,322 - INFO - Loading dimensions...
+2025-12-26 14:40:58,373 - INFO - Loading fact table...
+2025-12-26 14:40:58,376 - INFO - DW loaded successfully.
+2025-12-26 14:40:58,440 - WARNING - 2025-12-26 14:40:58,294 - INFO - Reading integrated dataset...
+2025-12-26 14:40:58,318 - INFO - Connecting to DW: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-26 14:40:58,322 - INFO - Creating tables...
+2025-12-26 14:40:58,322 - INFO - Loading dimensions...
+2025-12-26 14:40:58,373 - INFO - Loading fact table...
+2025-12-26 14:40:58,376 - INFO - DW loaded successfully.
+2025-12-26 14:40:58,440 - INFO - === END STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 14:40:58,440 - INFO - === START STEP: Publish to Azure Blob (Cloud) ===
+2025-12-26 14:40:59,385 - WARNING - INFO:azure.core.pipeline.policies.http_logging_policy:Request URL: 'https://deprojectstoragecarlos.blob.core.windows.net/integrated/affordability_integrated.csv'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '9725'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.11.9 (Windows-10-10.0.26100-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '82e20a27-e260-11f0-8abc-c4cb769eea1f'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+INFO:azure.core.pipeline.policies.http_logging_policy:Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Fri, 26 Dec 2025 13:40:59 GMT'
+    'ETag': '"0x8DE4484677E0C00"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '34da3498-201e-00ce-746d-76f893000000'
+    'x-ms-client-request-id': '82e20a27-e260-11f0-8abc-c4cb769eea1f'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Fri, 26 Dec 2025 13:40:58 GMT'
+INFO:root:CSV uploaded to Azure Blob Storage
+2025-12-26 14:40:59,386 - INFO - === END STEP: Publish to Azure Blob (Cloud) ===
+2025-12-26 14:40:59,386 - INFO - PIPELINE FINISHED SUCCESSFULLY
+2025-12-26 15:22:08,168 - INFO - === START STEP: Data Quality Checks (RAW) ===
+2025-12-26 15:22:08,782 - WARNING - 2025-12-26 15:22:08,716 - INFO - Loading salaries dataset
+2025-12-26 15:22:08,726 - INFO - Salaries dataset loaded with 70 rows
+2025-12-26 15:22:08,726 - INFO - Loading housing dataset
+2025-12-26 15:22:08,726 - INFO - Housing dataset loaded with 70 rows
+2025-12-26 15:22:08,726 - INFO - Checking schema for Salaries
+2025-12-26 15:22:08,726 - INFO - Checking null values for Salaries
+2025-12-26 15:22:08,733 - WARNING - Salaries: Null values detected:
+avg_salary_eur    4
+dtype: int64
+2025-12-26 15:22:08,733 - INFO - Checking duplicates for Salaries
+2025-12-26 15:22:08,733 - WARNING - Salaries: 3 duplicated rows found
+2025-12-26 15:22:08,733 - INFO - Checking schema for Housing
+2025-12-26 15:22:08,733 - INFO - Checking null values for Housing
+2025-12-26 15:22:08,733 - WARNING - Housing: Null values detected:
+avg_price_m2_eur    4
+dtype: int64
+2025-12-26 15:22:08,733 - INFO - Checking duplicates for Housing
+2025-12-26 15:22:08,733 - WARNING - Housing: 2 duplicated rows found
+2025-12-26 15:22:08,782 - INFO - === END STEP: Data Quality Checks (RAW) ===
+2025-12-26 15:22:08,782 - INFO - === START STEP: Clean to Staging ===
+2025-12-26 15:22:09,402 - WARNING - 2025-12-26 15:22:09,329 - INFO - Reading RAW datasets...
+2025-12-26 15:22:09,333 - INFO - Cleaning Salaries -> Staging
+2025-12-26 15:22:09,335 - INFO - Salaries: dropped 3 duplicate rows
+2025-12-26 15:22:09,335 - INFO - Cleaning Housing -> Staging
+2025-12-26 15:22:09,335 - INFO - Housing: dropped 2 duplicate rows
+2025-12-26 15:22:09,354 - INFO - Saved salaries staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\salaries\salaries_clean.csv
+2025-12-26 15:22:09,354 - INFO - Saved housing staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\housing\housing_clean.csv
+2025-12-26 15:22:09,402 - INFO - === END STEP: Clean to Staging ===
+2025-12-26 15:22:09,402 - INFO - === START STEP: Integrate Datasets ===
+2025-12-26 15:22:10,069 - WARNING - 2025-12-26 15:22:09,988 - INFO - Reading STAGING datasets...
+2025-12-26 15:22:09,988 - INFO - Integrating datasets (JOIN)...
+2025-12-26 15:22:09,988 - INFO - Integrated rows: 67
+2025-12-26 15:22:09,988 - INFO - Creating derived metrics...
+2025-12-26 15:22:10,005 - INFO - Saved integrated dataset: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\integrated\affordability_integrated.csv
+2025-12-26 15:22:10,069 - INFO - === END STEP: Integrate Datasets ===
+2025-12-26 15:22:10,069 - INFO - === START STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 15:22:10,600 - INFO - Reading integrated dataset...
+2025-12-26 15:22:10,653 - INFO - Connecting to DW: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-26 15:22:10,655 - INFO - Creating tables...
+2025-12-26 15:22:10,656 - INFO - Loading dimensions...
+2025-12-26 15:22:10,717 - INFO - Loading fact table...
+2025-12-26 15:22:10,735 - INFO - DW loaded successfully.
+2025-12-26 15:22:10,802 - WARNING - 2025-12-26 15:22:10,600 - INFO - Reading integrated dataset...
+2025-12-26 15:22:10,653 - INFO - Connecting to DW: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2025-12-26 15:22:10,655 - INFO - Creating tables...
+2025-12-26 15:22:10,656 - INFO - Loading dimensions...
+2025-12-26 15:22:10,717 - INFO - Loading fact table...
+2025-12-26 15:22:10,735 - INFO - DW loaded successfully.
+2025-12-26 15:22:10,802 - INFO - === END STEP: Load to Data Warehouse (SQLite) ===
+2025-12-26 15:22:10,802 - INFO - === START STEP: Publish to Azure Blob (Cloud) ===
+2025-12-26 15:22:11,871 - WARNING - INFO:azure.core.pipeline.policies.http_logging_policy:Request URL: 'https://deprojectstoragecarlos.blob.core.windows.net/integrated/affordability_integrated.csv'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '9725'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.11.9 (Windows-10-10.0.26100-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '4495c93b-e266-11f0-8eab-c4cb769eea1f'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+INFO:azure.core.pipeline.policies.http_logging_policy:Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Fri, 26 Dec 2025 14:22:12 GMT'
+    'ETag': '"0x8DE448A293AFE0D"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '453526ae-201e-003a-3473-763365000000'
+    'x-ms-client-request-id': '4495c93b-e266-11f0-8eab-c4cb769eea1f'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Fri, 26 Dec 2025 14:22:11 GMT'
+INFO:root:CSV uploaded to Azure Blob Storage
+2025-12-26 15:22:11,871 - INFO - === END STEP: Publish to Azure Blob (Cloud) ===
+2025-12-26 15:22:11,871 - INFO - PIPELINE FINISHED SUCCESSFULLY
+2026-01-12 21:43:51,061 - INFO - === START STEP: Data Quality Checks (RAW) ===
+2026-01-12 21:43:51,809 - WARNING - 2026-01-12 21:43:51,741 - INFO - Loading salaries dataset
+2026-01-12 21:43:51,744 - INFO - Salaries dataset loaded with 70 rows
+2026-01-12 21:43:51,744 - INFO - Loading housing dataset
+2026-01-12 21:43:51,746 - INFO - Housing dataset loaded with 70 rows
+2026-01-12 21:43:51,746 - INFO - Checking schema for Salaries
+2026-01-12 21:43:51,746 - INFO - Checking null values for Salaries
+2026-01-12 21:43:51,747 - WARNING - Salaries: Null values detected:
+avg_salary_eur    4
+dtype: int64
+2026-01-12 21:43:51,747 - INFO - Checking duplicates for Salaries
+2026-01-12 21:43:51,748 - WARNING - Salaries: 3 duplicated rows found
+2026-01-12 21:43:51,748 - INFO - Checking schema for Housing
+2026-01-12 21:43:51,748 - INFO - Checking null values for Housing
+2026-01-12 21:43:51,749 - WARNING - Housing: Null values detected:
+avg_price_m2_eur    4
+dtype: int64
+2026-01-12 21:43:51,749 - INFO - Checking duplicates for Housing
+2026-01-12 21:43:51,749 - WARNING - Housing: 2 duplicated rows found
+2026-01-12 21:43:51,810 - INFO - === END STEP: Data Quality Checks (RAW) ===
+2026-01-12 21:43:51,810 - INFO - === START STEP: Clean to Staging ===
+2026-01-12 21:43:52,516 - WARNING - 2026-01-12 21:43:52,426 - INFO - Reading RAW datasets...
+2026-01-12 21:43:52,430 - INFO - Cleaning Salaries -> Staging
+2026-01-12 21:43:52,434 - INFO - Salaries: dropped 3 duplicate rows
+2026-01-12 21:43:52,438 - INFO - Cleaning Housing -> Staging
+2026-01-12 21:43:52,439 - INFO - Housing: dropped 2 duplicate rows
+2026-01-12 21:43:52,452 - INFO - Saved salaries staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\salaries\salaries_clean.csv
+2026-01-12 21:43:52,452 - INFO - Saved housing staging file: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\housing\housing_clean.csv
+2026-01-12 21:43:52,516 - INFO - === END STEP: Clean to Staging ===
+2026-01-12 21:43:52,516 - INFO - === START STEP: Integrate Datasets ===
+2026-01-12 21:43:53,097 - WARNING - 2026-01-12 21:43:53,003 - INFO - Reading STAGING datasets...
+2026-01-12 21:43:53,024 - INFO - Integrating datasets (JOIN)...
+2026-01-12 21:43:53,024 - INFO - Integrated rows: 67
+2026-01-12 21:43:53,024 - INFO - Creating derived metrics...
+2026-01-12 21:43:53,037 - INFO - Saved integrated dataset: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\staging\integrated\affordability_integrated.csv
+2026-01-12 21:43:53,097 - INFO - === END STEP: Integrate Datasets ===
+2026-01-12 21:43:53,097 - INFO - === START STEP: Load to Data Warehouse (SQLite) ===
+2026-01-12 21:43:53,550 - INFO - Reading integrated dataset...
+2026-01-12 21:43:53,571 - INFO - Connecting to DW: C:\Users\carlo\USJ\3บ\1บ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2026-01-12 21:43:53,571 - INFO - Creating tables...
+2026-01-12 21:43:53,571 - INFO - Loading dimensions...
+2026-01-12 21:43:53,602 - INFO - Loading fact table...
+2026-01-12 21:43:53,602 - INFO - DW loaded successfully.
+2026-01-12 21:43:53,663 - WARNING - 2026-01-12 21:43:53,550 - INFO - Reading integrated dataset...
+2026-01-12 21:43:53,571 - INFO - Connecting to DW: C:\Users\carlo\USJ\3ยบ\1ยบ Cuatrimestre\data-engineering-project\data\warehouse\dw.sqlite
+2026-01-12 21:43:53,571 - INFO - Creating tables...
+2026-01-12 21:43:53,571 - INFO - Loading dimensions...
+2026-01-12 21:43:53,602 - INFO - Loading fact table...
+2026-01-12 21:43:53,602 - INFO - DW loaded successfully.
+2026-01-12 21:43:53,663 - INFO - === END STEP: Load to Data Warehouse (SQLite) ===
+2026-01-12 21:43:53,663 - INFO - === START STEP: Publish to Azure Blob (Cloud) ===
+2026-01-12 21:43:54,939 - WARNING - INFO:azure.core.pipeline.policies.http_logging_policy:Request URL: 'https://deprojectstoragecarlos.blob.core.windows.net/integrated/affordability_integrated.csv'
+Request method: 'PUT'
+Request headers:
+    'Content-Length': '9725'
+    'x-ms-blob-type': 'REDACTED'
+    'x-ms-version': 'REDACTED'
+    'Content-Type': 'application/octet-stream'
+    'Accept': 'application/xml'
+    'User-Agent': 'azsdk-python-storage-blob/12.27.1 Python/3.11.9 (Windows-10-10.0.26100-SP0)'
+    'x-ms-date': 'REDACTED'
+    'x-ms-client-request-id': '68c802ff-eff7-11f0-9da5-c4cb769eea1f'
+    'Authorization': 'REDACTED'
+A body is sent with the request
+INFO:azure.core.pipeline.policies.http_logging_policy:Response status: 201
+Response headers:
+    'Content-Length': '0'
+    'Content-MD5': 'REDACTED'
+    'Last-Modified': 'Mon, 12 Jan 2026 20:43:56 GMT'
+    'ETag': '"0x8DE521B4E15A26C"'
+    'Server': 'Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0'
+    'x-ms-request-id': '27e7954f-901e-0086-0604-84e5a4000000'
+    'x-ms-client-request-id': '68c802ff-eff7-11f0-9da5-c4cb769eea1f'
+    'x-ms-version': 'REDACTED'
+    'x-ms-content-crc64': 'REDACTED'
+    'x-ms-request-server-encrypted': 'REDACTED'
+    'Date': 'Mon, 12 Jan 2026 20:43:55 GMT'
+INFO:root:CSV uploaded to Azure Blob Storage
+2026-01-12 21:43:54,940 - INFO - === END STEP: Publish to Azure Blob (Cloud) ===
+2026-01-12 21:43:54,940 - INFO - PIPELINE FINISHED SUCCESSFULLY

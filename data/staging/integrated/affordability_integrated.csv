@@ -1,0 +1,68 @@
+date,autonomous_community_sal,avg_salary_eur,employment_rate,autonomous_community_raw_sal,autonomous_community_key,autonomous_community_hou,avg_price_m2_eur,avg_rent_m2_eur,autonomous_community_raw_hou,affordability_index,salary_to_rent_ratio
+2023-06,Comunitat Valenciana,1991.0,72.4,Comunitat Valenciana,comunitat valenciana,Comunitat Valenciana,2139.0,10.28,Comunitat Valenciana,0.9308087891538102,2.4209630350194553
+2023-01,Comunitat Valenciana,2183.0,72.2,Comunitat Valenciana,comunitat valenciana,Comunitat Valenciana,2332.75,13.21,Comunitat Valenciana,0.9358053799164077,2.0656699470098405
+2023-04,Castilla y León,1912.0,64.1,Castilla y León,castilla y leon,Castilla y León,1805.0,20.77,Castilla y León,1.0592797783933519,1.150698122291767
+2023-06,País Vasco,2771.0,74.5,País Vasco,pais vasco,País Vasco,3896.0,15.97,País Vasco,0.7112422997946611,2.1689104571070756
+2023-01,Comunidad de Madrid,2978.0,62.5,Comunidad de Madrid,comunidad de madrid,Comunidad de Madrid,4495.0,20.94,Comunidad de Madrid,0.6625139043381535,1.7776981852913085
+2023-01,País Vasco,2940.0,63.9,País Vasco,pais vasco,país vasco,3913.0,12.11,país vasco,0.7513416815742398,3.034682080924856
+2023-05,Galicia,2098.0,72.1,Galicia,galicia,Galicia,1849.0,19.2,Galicia,1.134667387777177,1.3658854166666667
+2023-03,Castilla y León,2079.0,73.1,Castilla y León,castilla y leon,castilla y león,1777.0,20.69,castilla y león,1.1699493528418683,1.2560415659739004
+2023-08,País Vasco,2862.0,62.8,País Vasco,pais vasco,País Vasco,4214.78,17.6,País Vasco,0.679039000849392,2.0326704545454546
+2023-10,Andalucia,1506.0,73.5,Andalucia,andalucia,Andalucía,1871.0,10.04,Andalucía,0.8049171566007483,1.8750000000000002
+2023-09,COMUNIDAD DE MADRID,2940.0,66.9,COMUNIDAD DE MADRID,comunidad de madrid,Comunidad de Madrid,4515.0,16.53,Comunidad de Madrid,0.6511627906976745,2.2232304900181488
+2023-10,COMUNITAT VALENCIANA,1991.0,60.1,COMUNITAT VALENCIANA,comunitat valenciana,Comunitat Valenciana,2139.0,14.25,Comunitat Valenciana,0.9308087891538102,1.7464912280701754
+2023-06,COMUNIDAD DE MADRID,2665.0,66.8,COMUNIDAD DE MADRID,comunidad de madrid,Comunidad de Madrid,4526.0,17.75,Comunidad de Madrid,0.5888201502430402,1.8767605633802817
+2023-01,Galicia,2072.0,61.6,Galicia,galicia,Galicia,1507.0,10.45,Galicia,1.3749170537491706,2.478468899521531
+2023-06,Galicia,2124.0,72.3,Galicia,galicia,galicia,1889.0,18.47,galicia,1.1244044467972472,1.437466161342718
+2023-10,COMUNIDAD DE MADRID,3063.0,67.8,COMUNIDAD DE MADRID,comunidad de madrid,Comunidad de Madrid,4724.4,17.78,Comunidad de Madrid,0.6483362966725934,2.153402699662542
+2023-03,Pais Vasco,2926.0,62.2,Pais Vasco,pais vasco,país vasco,3915.0,10.57,país vasco,0.747381864623244,3.4602649006622515
+2023-04,ANDALUCÍA,1623.0,61.4,ANDALUCÍA,andalucia,Andalucía,1942.12,9.83,Andalucía,0.8356847156715342,2.0638351983723298
+2023-08,COMUNITAT VALENCIANA,1919.0,66.5,COMUNITAT VALENCIANA,comunitat valenciana,comunitat valenciana,2310.0,12.45,comunitat valenciana,0.8307359307359308,1.926706827309237
+2023-03,COMUNITAT VALENCIANA,2038.0,61.7,COMUNITAT VALENCIANA,comunitat valenciana,comunitat valenciana,2149.0,14.19,comunitat valenciana,0.9483480688692415,1.7952783650458068
+2023-07,COMUNITAT VALENCIANA,1914.0,63.8,COMUNITAT VALENCIANA,comunitat valenciana,Comunitat Valenciana,2145.0,10.27,Comunitat Valenciana,0.8923076923076924,2.3296007789678677
+2023-02,Andalucia,1742.0,70.8,Andalucia,andalucia,Andalucía,1755.0,20.41,Andalucía,0.9925925925925926,1.0668789808917198
+2023-09,País Vasco,2617.0,72.3,País Vasco,pais vasco,País Vasco,3741.0,11.05,País Vasco,0.6995455760491847,2.9604072398190047
+2023-06,Andalucia,1503.0,63.1,Andalucia,andalucia,andalucía,1861.0,14.51,andalucía,0.8076303062869425,1.2947966919365954
+2023-05,Pais Vasco,2849.0,61.3,Pais Vasco,pais vasco,País Vasco,3876.0,17.57,País Vasco,0.7350361197110423,2.0268924302788847
+2023-02,COMUNITAT VALENCIANA,1944.0,64.0,COMUNITAT VALENCIANA,comunitat valenciana,Comunitat Valenciana,2067.0,18.96,Comunitat Valenciana,0.9404934687953556,1.2816455696202531
+2023-09,COMUNITAT VALENCIANA,2117.0,69.5,COMUNITAT VALENCIANA,comunitat valenciana,Comunitat Valenciana,2024.0,9.79,Comunitat Valenciana,1.0459486166007905,2.7030132788559755
+2023-09,CATALUÑA,2563.0,70.7,CATALUÑA,cataluna,cataluña,4115.0,11.83,cataluña,0.6228432563791009,2.708157227387997
+2023-07,ANDALUCÍA,1636.0,64.8,ANDALUCÍA,andalucia,Andalucía,1809.0,14.48,Andalucía,0.904367053620785,1.412292817679558
+2023-04,Comunidad de Madrid,2729.0,75.9,Comunidad de Madrid,comunidad de madrid,Comunidad de Madrid,4451.0,16.65,Comunidad de Madrid,0.6131206470456078,2.048798798798799
+2023-07,Comunidad de Madrid,2723.0,75.8,Comunidad de Madrid,comunidad de madrid,Comunidad de Madrid,4471.0,14.76,Comunidad de Madrid,0.6090360098411989,2.3060636856368566
+2023-07,GALICIA,2045.0,67.1,GALICIA,galicia,Galicia,1895.0,21.99,Galicia,1.079155672823219,1.1624602091859937
+2023-10,CASTILLA Y LEÓN,2093.0,77.5,CASTILLA Y LEÓN,castilla y leon,Castilla y Leon,1822.0,9.52,Castilla y Leon,1.1487376509330407,2.7481617647058827
+2023-03,GALICIA,1991.0,70.9,GALICIA,galicia,Galicia,1821.0,17.45,Galicia,1.0933552992861066,1.42621776504298
+2023-04,PAÍS VASCO,2795.0,77.7,PAÍS VASCO,pais vasco,país vasco,3939.0,9.92,país vasco,0.7095709570957096,3.5219254032258065
+2023-08,Galicia,2173.0,69.2,Galicia,galicia,galicia,1690.0,12.71,galicia,1.2857988165680474,2.137096774193548
+2023-05,Comunitat Valenciana,2222.0,66.7,Comunitat Valenciana,comunitat valenciana,Comunitat Valenciana,2037.0,16.49,Comunitat Valenciana,1.0908198330878742,1.6843541540327474
+2023-01,Cataluña,2583.0,65.0,Cataluña,cataluna,Cataluña,4431.0,21.4,Cataluña,0.5829383886255924,1.5087616822429906
+2023-02,Castilla y León,2079.0,73.7,Castilla y León,castilla y leon,Castilla y Leon,1922.0,11.15,Castilla y Leon,1.0816857440166494,2.3307174887892375
+2023-09,Galicia,2042.0,75.5,Galicia,galicia,galicia,1667.0,9.74,galicia,1.2249550089982004,2.6206365503080082
+2023-09,Andalucía,1549.0,74.3,Andalucía,andalucia,andalucía,1651.0,11.01,andalucía,0.9382192610539067,1.7586285195277023
+2023-05,Comunidad de Madrid,2828.0,75.0,Comunidad de Madrid,comunidad de madrid,Comunidad de Madrid,4505.0,18.4,Comunidad de Madrid,0.627746947835738,1.921195652173913
+2023-04,CATALUÑA,2608.0,74.9,CATALUÑA,cataluna,Cataluña,4095.0,16.65,Cataluña,0.6368742368742368,1.957957957957958
+2023-10,País Vasco,2673.0,69.1,País Vasco,pais vasco,País Vasco,3715.0,14.45,País Vasco,0.7195154777927322,2.3122837370242215
+2023-07,PAÍS VASCO,2791.0,62.5,PAÍS VASCO,pais vasco,País Vasco,4071.0,11.16,País Vasco,0.6855809383443872,3.126120071684588
+2023-04,Galicia,2072.0,61.3,Galicia,galicia,Galicia,1680.0,9.77,Galicia,1.2333333333333334,2.650972364380758
+2023-08,CATALUÑA,2639.0,73.4,CATALUÑA,cataluna,cataluña,11405.52,20.73,cataluña,0.23137919182992095,1.5912928123492522
+2023-01,CASTILLA Y LEÓN,2022.0,60.6,CASTILLA Y LEÓN,castilla y leon,castilla y león,1823.0,20.42,castilla y león,1.109160724081185,1.2377571008814887
+2023-02,País Vasco,2795.0,72.6,País Vasco,pais vasco,País Vasco,3822.0,20.34,País Vasco,0.7312925170068028,1.7176745329400196
+2023-08,Andalucia,1438.0,70.1,Andalucia,andalucia,andalucía,1913.0,15.26,andalucía,0.7516989022477784,1.177916120576671
+2023-03,ANDALUCÍA,1443.0,65.0,ANDALUCÍA,andalucia,andalucía,1679.0,21.54,andalucía,0.8594401429422275,0.8373955431754876
+2023-09,Castilla y León,2028.0,72.2,Castilla y León,castilla y leon,Castilla y Leon,1710.0,15.2,Castilla y Leon,1.1859649122807017,1.667763157894737
+2023-10,Galicia,2220.0,75.8,Galicia,galicia,Galicia,1852.0,12.2,Galicia,1.1987041036717063,2.2745901639344264
+2023-05,Castilla y León,1923.0,76.9,Castilla y León,castilla y leon,castilla y león,11092.98,11.48,castilla y león,0.17335287722505585,2.0938588850174216
+2023-07,Cataluña,2564.0,76.4,Cataluña,cataluna,cataluña,4569.0,15.01,cataluña,0.5611731232217115,2.1352431712191873
+2023-04,COMUNITAT VALENCIANA,1935.0,70.4,COMUNITAT VALENCIANA,comunitat valenciana,Comunitat Valenciana,2041.0,9.92,Comunitat Valenciana,0.9480646741793238,2.4382560483870965
+2023-08,Castilla y León,2174.0,73.6,Castilla y León,castilla y leon,Castilla y Leon,1788.0,21.45,Castilla y Leon,1.215883668903803,1.2668997668997668
+2023-02,Galicia,2044.0,65.0,Galicia,galicia,Galicia,1948.69,17.58,Galicia,1.0489097804165874,1.4533560864618886
+2023-07,Castilla y León,2177.0,68.3,Castilla y León,castilla y leon,Castilla y León,1525.0,21.6,Castilla y León,1.4275409836065573,1.259837962962963
+2023-03,COMUNIDAD DE MADRID,2778.0,61.8,COMUNIDAD DE MADRID,comunidad de madrid,Comunidad de Madrid,4637.0,11.61,Comunidad de Madrid,0.5990942419667888,2.9909560723514215
+2023-08,COMUNIDAD DE MADRID,2854.0,76.2,COMUNIDAD DE MADRID,comunidad de madrid,Comunidad de Madrid,4364.0,13.93,Comunidad de Madrid,0.653987167736022,2.5610193826274226
+2023-06,Cataluña,2625.0,64.4,Cataluña,cataluna,cataluña,4483.0,20.23,cataluña,0.5855453937095695,1.6219723183391002
+2023-06,Castilla y León,2139.0,64.1,Castilla y León,castilla y leon,Castilla y León,1805.0,12.23,Castilla y León,1.1850415512465373,2.186222403924775
+2023-01,Andalucia,1710.0,62.0,Andalucia,andalucia,andalucía,1854.0,18.91,andalucía,0.9223300970873787,1.1303543098889477
+2023-02,Cataluña,2544.0,63.6,Cataluña,cataluna,Cataluña,4214.0,10.11,Cataluña,0.6037019458946369,3.1454005934718103
+2023-05,CATALUÑA,2565.0,65.0,CATALUÑA,cataluna,cataluña,4165.0,11.79,cataluña,0.6158463385354142,2.7194656488549622
+2023-05,Andalucía,1578.0,75.6,Andalucía,andalucia,Andalucía,1801.0,12.62,Andalucía,0.8761799000555247,1.5629952456418386
