@@ -129,14 +129,15 @@ Important, in a real project, I would not store credentials inside the code. The
 
 ## Data Warehouse (SQLite)
 
-Once the integrated dataset is generated, I store the results in a data warehouse implemented with SQLite. I decided to use SQLite because it is easy to use and does not require a server installation.
-The data warehouse is stored in the file dw.sqlite and follows a star schema structure. It includes a date dimension, a community dimension, and a fact table that contains the main measures related to salaries, housing prices, and affordability indicators. Using this structure helps reduce duplicated information and makes analytical queries easier and clearer.
+Once the integrated dataset is generated, I store the results in a data warehouse implemented in two different ways. First, I create a dimensional model stored as CSV files, This version represents the data warehouse structure in a simple and clear way and helps to understand the dimensions and the fact table. I only have made this yo give a other perspective.
 
-The loading process is implemented in the script load_to_dw_sqlite.py. This script reads the integrated dataset and first creates the necessary tables if they do not already exist. Then, it loads the dimension tables by inserting unique dates and autonomous communities. For the community dimension, a representative and readable name is selected from the dataset to keep the dimension understandable.
+After that, I implement a physical data warehouse using SQLite. I decided to use SQLite because it is easy to use and does not require a server installation. The SQLite data warehouse is stored in the file dw.sqlite and follows a star schema structure. It includes a date dimension, a community dimension, and a fact table that contains the main measures related to salaries, housing prices, and affordability indicators. This structure reduces duplicated information and makes analytical queries easier and clearer.
+
+The loading process for the SQLite data warehouse is implemented in the script load_to_dw_sqlite.py. This script reads the integrated dataset and first creates the necessary tables if they do not already exist. Then, it loads the dimension tables by inserting unique dates and autonomous communities. For the community dimension, a representative and readable name is selected from the dataset to keep the dimension understandable.
 
 After loading the dimensions, the script fills the fact table. The integrated data is linked to the corresponding dimension keys, and all relevant numeric measures are inserted, including salaries, housing prices, and the derived affordability indicators. Before inserting new data, the fact table is cleared to avoid duplicated records when the pipeline is executed more than once.
 
-Finally, a small verification script is used to check that the data warehouse has been correctly populated. This script simply connects to the SQLite database and prints the number of rows in each table, allowing a quick validation that the loading process was successful.
+Finally, a small verification script is used to check that the data warehouse has been correctly populated. This script connects to the SQLite database and prints the number of rows in each table, allowing a quick validation that the loading process was successful.
 
 
 ## Pipeline Orchestration
