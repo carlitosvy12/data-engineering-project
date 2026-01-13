@@ -77,7 +77,7 @@ This script reads the two raw CSV files (salaries and housing) and prepares them
 First, it standardizes the key fields used for matching:
 - date is converted to a clean string (trimmed).
 - autonomous_community is kept as a raw version (autonomous_community_raw) for traceability.
-- A normalized key called `¡autonomous_community_key is created. It removes extra spaces, converts to lowercase, and removes accents. This avoids problems like different spelling formats (for example, accents or uppercase letters).
+- A normalized key called autonomous_community_key is created. It removes extra spaces, converts to lowercase, and removes accents. This avoids problems like different spelling formats (for example, accents or uppercase letters).
 
 Then, it removes duplicated rows. The script logs how many duplicates are dropped, so the cleaning actions are transparent.
 
@@ -89,7 +89,7 @@ If a value cannot be converted, it becomes null (NaN), which is a safe way to de
 Missing values are handled in a simple and stable way:
 - avg_salary_eur and avg_price_m2_eur are filled using the median value of the same autonomous community (grouped by autonomous_community_key). This keeps the dataset complete without using extreme values.
 
-Finally, the housing price per m² is capped at the 99th percentile (p99) inside each community. This reduces the impact of extreme outliers and makes the later indicators more robust.
+Finally, the housing price per m² is capped at the 99 percentile (p99) inside each community. This reduces the impact of extreme outliers and makes the later indicators more robust.
 
 At the end, the script saves the cleaned outputs into:
 - data/staging/salaries/salaries_clean.csv

@@ -2,16 +2,13 @@ import pandas as pd
 import logging
 from pathlib import Path
 
-# Simple logging so we can see what happens when we run the script
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s"
-)
+# Simple logging so we can see what happens when we run the scrip
+logging.basicConfig(level=logging.INFO,format="%(asctime)s - %(levelname)s - %(message)s")
 
-# Base project path (two folders up from this file)
+# Base project path 
 BASE_PATH = Path(__file__).resolve().parents[2]
 
-# Raw data files (we keep them "as they are", no cleaning here)
+# Raw data files 
 SALARIES_PATH = BASE_PATH / "data/raw/salaries/salaries_by_community_es_70.csv"
 HOUSING_PATH = BASE_PATH / "data/raw/housing/housing_by_community_es_70.csv"
 
@@ -41,6 +38,5 @@ def load_housing_data():
 
 
 if __name__ == "__main__":
-    # Quick test: load both datasets and check the number of rows
     salaries_df = load_salaries_data()
     housing_df = load_housing_data()

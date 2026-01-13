@@ -4,9 +4,7 @@ import logging
 from pathlib import Path
 
 # Logging configuration
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
+logging.basicConfig(level=logging.INFO,format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
         logging.FileHandler("logs/pipeline.log"),
         logging.StreamHandler()
@@ -79,6 +77,7 @@ def load_dimensions(conn: sqlite3.Connection, df: pd.DataFrame):
 
     # Prepare community dimension
     comm = df[["autonomous_community_key"]].drop_duplicates()
+
 
     # Try to find a readable community name column
     rep_col = None

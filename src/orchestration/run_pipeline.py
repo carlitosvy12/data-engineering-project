@@ -8,15 +8,12 @@ from datetime import datetime
 # Base project path
 BASE_PATH = Path(__file__).resolve().parents[2]
 
-# Logs folder (created if it does not exist)
+# Logs folder 
 LOGS_PATH = BASE_PATH / "logs"
 LOGS_PATH.mkdir(exist_ok=True)
 
 # Logging configuration
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
+logging.basicConfig(level=logging.INFO,format="%(asctime)s - %(levelname)s - %(message)s",handlers=[
         logging.FileHandler(LOGS_PATH / "pipeline.log", encoding="utf-8"),
         logging.StreamHandler()
     ]
